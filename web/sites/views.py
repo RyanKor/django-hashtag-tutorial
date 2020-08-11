@@ -9,7 +9,7 @@ from django.template.defaultfilters import slugify
 
 def home_view(request):
     posts = Post.objects.all()
-    common_tags = Post.tags.most_common()[:4]
+    common_tags = Post.tags.most_common()
     form = PostForm(request.POST)
     if form.is_valid():
         newpost = form.save(commit=False)
